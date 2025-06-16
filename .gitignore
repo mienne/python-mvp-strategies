@@ -25,20 +25,6 @@ coverage.xml
 dmypy.json
 .pyre/
 
-# Output files
-*.png
-*.jpg
-*.jpeg
-*.pdf
-
-# Data files
-data/
-*.csv
-*.xlsx
-*.xls
-*.pkl
-*.parquet
-
 # IDE
 .idea/
 .vscode/

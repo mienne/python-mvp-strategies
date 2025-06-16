@@ -7,15 +7,16 @@ import yfinance as yf
 from curl_cffi import requests
 
 
-def download(save_path, start_date="2006-01-01", end_date="2025-01-01"):
-    codes = ["SPY", "EFA", "IEF", "VNQ", "DBC", "SHV"]
+def download(tickers, save_path, start_date="2006-01-01", end_date="2025-01-01"):
+    if len(tickers) == 0:
+        tickers = ["SPY", "EFA", "IEF", "VNQ", "DBC", "SHV"]
 
     os.makedirs(save_path, exist_ok=True)
 
-    for code in codes:
+    for symbol in tickers:
         try:
             session = requests.Session(impersonate="chrome")
-            ticker = yf.Ticker(code, session=session)
+            ticker = yf.Ticker(symbol, session=session)
             data = ticker.history(start=start_date, end=end_date)
 
             column_mapping = {
@@ -34,7 +35,11 @@ def download(save_path, start_date="2006-01-01", end_date="2025-01-01"):
                     new_data[new_col] = data[old_col]
 
             if not new_data.empty:
-                new_data.to_csv(f"{save_path}/{code}_data.csv")
+                new_data.to_csv(f"{save_path}/{symbol}_data.csv")
 
         except Exception as e:
-            print(f"❌ download: {e}")
+            pass
+
+
+if __name__ == "__main__":
+    download(tickers=["SPY", "EFA", "IEF", "VNQ", "DBC", "SHV"], save_path="data")
