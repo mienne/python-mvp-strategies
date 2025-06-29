@@ -1,0 +1,22 @@
+timestamp,step,status,details,duration
+2025-06-29 20:33:32.401942,Environment Validation,IN_PROGRESS,Checking prerequisites...,
+2025-06-29 20:33:32.402201,Environment Validation,WARNING,"Missing data files: ['KODEX 200', 'KODEX 코스닥 150', 'KODEX 레버리지', 'KODEX 레버리지 인버스', 'KODEX 코스닥150 레버리지', 'KODEX 코스닥150 인버스']",0.000259
+2025-06-29 20:33:32.402204,Environment Validation,INFO,Will attempt to download missing data using FDRDownloader,3e-06
+2025-06-29 20:33:32.402206,Data Loading,IN_PROGRESS,Loading 6 ETFs...,2e-06
+2025-06-29 20:33:33.313053,Data Loading,SUCCESS,Loaded 4 ETFs successfully,0.910847
+2025-06-29 20:33:33.313080,Signal Generation,IN_PROGRESS,Calculating Smash Day patterns...,2.7e-05
+2025-06-29 20:33:33.348113,Signal Generation,SUCCESS,Generated signals for 2 ETFs,0.035033
+2025-06-29 20:33:33.348123,Portfolio Construction,IN_PROGRESS,Mapping signals to leveraged ETFs...,1e-05
+2025-06-29 20:33:33.348128,Portfolio Construction,DEBUG,"Available signals for ETFs: ['KODEX 레버리지', 'KODEX 코스닥150 레버리지']",5e-06
+2025-06-29 20:33:33.348130,Portfolio Construction,WARNING,"No base ETF signals found, using leveraged ETF signals directly",2e-06
+2025-06-29 20:33:33.451505,Portfolio Construction,DEBUG,"Non-zero weights: 70, Total days: 1477",0.103375
+2025-06-29 20:33:33.451513,Portfolio Construction,SUCCESS,Calculated weights for 1477 days,8e-06
+2025-06-29 20:33:33.451531,Backtesting,IN_PROGRESS,Running Smash Day backtest simulation...,1.8e-05
+2025-06-29 20:33:33.569945,Backtesting,DEBUG,"Returns shape: (1476,), Values shape: (1476,)",0.118414
+2025-06-29 20:33:33.570367,Backtesting,INFO,"Total trades: 140, Buy trades: 70, Sell trades: 70",0.000422
+2025-06-29 20:33:33.570372,Benchmark,WARNING,"Benchmark ETF 'KODEX 200' not found, using 'KODEX 레버리지' instead",5e-06
+2025-06-29 20:33:33.570677,Backtesting,SUCCESS,Completed backtest with 140 trades,0.000305
+2025-06-29 20:33:33.570680,Performance Analysis,IN_PROGRESS,Calculating performance metrics...,3e-06
+2025-06-29 20:33:33.579848,Performance Analysis,SUCCESS,Completed performance analysis,0.009168
+2025-06-29 20:33:33.579856,Reporting,IN_PROGRESS,Generating reports and visualizations...,8e-06
+2025-06-29 20:33:33.853065,PDF Report,SUCCESS,Generated PDF report: output/2/smash_day_report.pdf,0.273209

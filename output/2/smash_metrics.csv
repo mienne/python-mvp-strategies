@@ -1,0 +1,11 @@
+,0
+total_trades,70.0
+trades_per_year,11.70137299771167
+bailout_exits,51.0
+stop_loss_exits,13.0
+time_exits,6.0
+opposite_signal_exits,0.0
+avg_return_bailout,0.010275592860442686
+avg_return_stop_loss,-0.03691355474766104
+avg_return_time_exit,-0.008696604417467724
+avg_return_opposite,0.0
